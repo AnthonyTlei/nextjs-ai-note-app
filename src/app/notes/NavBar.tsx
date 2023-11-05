@@ -36,7 +36,7 @@ export default function NavBar() {
               height={40}
               alt="SecondBrain Logo"
             />
-            <span className="font-bold">SecondBrain</span>
+            <span className="font-bold hidden sm:block ">SecondBrain</span>
           </Link>
           <div className="flex items-center gap-2">
             <UserButton
@@ -47,7 +47,10 @@ export default function NavBar() {
               }}
             />
             <ThemeToggleButton />
-            <Button onClick={() => setShowAddEditNoteDialog(true)}>
+            <Button className="sm:hidden" onClick={() => setShowAddEditNoteDialog(true)}>
+              <Plus size={20} />
+            </Button>
+            <Button className="hidden sm:flex" onClick={() => setShowAddEditNoteDialog(true)}>
               <Plus size={20} className="mr-2" />
               Add Note
             </Button>
