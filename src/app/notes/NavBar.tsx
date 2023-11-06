@@ -12,6 +12,7 @@ import AddEditNoteDialog from "@/components/AddEditNoteDialog";
 import ThemeToggleButton from "@/components/ThemeToggleButton";
 import logoWhite from "@/assets/logo-white.png";
 import logoBlack from "@/assets/logo-black.png";
+import AIChatButton from "@/components/AIChatButton";
 
 export default function NavBar() {
   const { theme } = useTheme();
@@ -36,7 +37,7 @@ export default function NavBar() {
               height={40}
               alt="SecondBrain Logo"
             />
-            <span className="font-bold hidden sm:block ">SecondBrain</span>
+            <span className="hidden font-bold sm:block ">SecondBrain</span>
           </Link>
           <div className="flex items-center gap-2">
             <UserButton
@@ -47,13 +48,20 @@ export default function NavBar() {
               }}
             />
             <ThemeToggleButton />
-            <Button className="sm:hidden" onClick={() => setShowAddEditNoteDialog(true)}>
+            <Button
+              className="sm:hidden"
+              onClick={() => setShowAddEditNoteDialog(true)}
+            >
               <Plus size={20} />
             </Button>
-            <Button className="hidden sm:flex" onClick={() => setShowAddEditNoteDialog(true)}>
+            <Button
+              className="hidden sm:flex"
+              onClick={() => setShowAddEditNoteDialog(true)}
+            >
               <Plus size={20} className="mr-2" />
               Add Note
             </Button>
+            <AIChatButton />
           </div>
         </div>
       </div>
